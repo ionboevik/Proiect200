@@ -6,14 +6,16 @@ const request = async() =>{
     try {
         if(!response.ok){
             throw new Error('Error fetching data')
-        }
-    } catch (error) {
-        const convertionJson = await response.json()
-        const convertor = convertionJson
-
-        convertor.forEach(element => {
-            console.log(element);
+        }else{
+            const convertireJSON = await response.json()
+            const convertor = convertireJSON
+            console.log(convertor);
             
-        });
+           
+        }
+    } catch (err) {
+        console.error('An error ocurred',err)
     }
 }
+
+request()
